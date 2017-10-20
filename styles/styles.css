@@ -1,0 +1,28 @@
+body {
+  background: #CCE9FF;
+  font-family: Calibri, Arial, sans-serif;
+  margin: 40px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+section {
+  max-width: 600px;
+  margin: auto;
+}
+
+#bar_chart, #column_chart {
+  border: 1px solid #AFD0E3;
+}
+
+#bar_chart {
+  width: 100%;
+  height: 400px;
+}
+
+#column_chart {
+  width: 100%;
+  height: 400px;
+}

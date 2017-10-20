@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Americans' View on Cybersecurity</title>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+
+  <script src="https://code.highcharts.com/themes/grid-light.js"></script>
+
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<link href="styles/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <h1>Americans' View on Cybersecurity</h1>
+
+  <h2>Charts by Savanna Kearney</h2>
+
+<section>
+
+  <p>Cybersecurity is becoming increasingly important among Americans today, especially as technology--and our knowledge of it--continues to evolve. According to <a href="http://www.pewinternet.org/2017/01/26/americans-and-cybersecurity/">Pew Research Center</a>, many Americans do not generally trust other people, despite the fact that many of them do not take the necessary precautions to protect their Internet passwords. There are plenty of steps people can take to safely save their passwords, and thus their important personal information. For example, the most popular way to save Internet passwords among the Americans who took this survey is either to memorize them in their heads or write them down on a piece of paper--neither of which is the safest and smartest method. Very few of the people surveyed utilized password management programs, such as Dashlane, Lastpass or Apple Keychain. With the various instances of cybersecurity hacking in the United States, it is more important than ever to use the best practices for protecting your personal information--and your livelhood.</p>
+
+  <div id="bar_chart"></div>
+
+<p>Data comes from Pew Research Center: <a href="http://www.pewinternet.org/2017/01/26/americans-and-cybersecurity/">Americans and Cybersecurity</a></p>
+
+  <div id="column_chart"></div>
+
+  <p>Data comes from Pew Research Center: <a href="http://www.pewinternet.org/2017/01/26/americans-and-cybersecurity/">Americans and Cybersecurity</a></p>
+
+  <p>Data based on a national sample of 1,040 adults, 18 years or older, living in the United States. The survey was conducted from March 30, 2016 to May 3, 2016.</p>
+
+  </section>
+
+
+<script>
+Highcharts.chart('bar_chart', {
+      chart: {
+          type: 'bar'
+      },
+      title: {
+          text: 'How Americans Keep Track of Their Internet Passwords '
+      },
+      subtitle: {
+        text: 'Source: <a href="http://www.pewinternet.org/2017/01/26/americans-and-cybersecurity/">Pew Research Center</a>'
+      },
+      xAxis: {
+          categories: ['Memorize them in your head', 'Write them down on a piece of paper', 'Save them on a note/document on your desktop/mobile device', 'Save them in your Internet Browser', 'Use a password management program', 'Some other way'],
+          title: {
+              text: null
+          }
+      },
+      yAxis: {
+          min: 0,
+          title: {
+              text: 'Number of People',
+              align: 'high'
+          },
+          labels: {
+              overflow: 'justify'
+          }
+      },
+      tooltip: {
+          valueSuffix: ' people'
+      },
+      plotOptions: {
+          bar: {
+              dataLabels: {
+                  enabled: true
+              }
+          }
+      },
+      legend: {
+          layout: 'vertical',
+          align: 'right',
+          verticalAlign: 'top',
+          x: 10,
+          y: 120,
+          floating: true,
+          borderWidth: 1,
+          backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+          shadow: true
+      },
+      credits: {
+          enabled: false
+      },
+      series: [{
+          name: 'Men',
+          data: [1095, 563, 299, 250, 203, 39]
+        }, {
+          name: 'Women',
+          data: [1143, 706, 332, 224, 100, 40]
+  }]
+});
+
+</script>
+
+
+<script>
+
+Highcharts.chart('column_chart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Trust Among Americans'
+    },
+    subtitle: {
+      text: 'Source: <a href="http://www.pewinternet.org/2017/01/26/americans-and-cybersecurity/">Pew Research Center</a>'
+    },
+    xAxis: {
+        categories: ['Most people can be trusted', "You can't be too careful", 'It depends', "Don't know", 'Refused']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Number of Respondents'
+        },
+        stackLabels: {
+            enabled: true,
+            style: {
+                fontWeight: 'bold',
+                color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+            }
+        }
+    },
+    legend: {
+        align: 'right',
+        x: 10,
+        verticalAlign: 'top',
+        y: 60,
+        floating: true,
+        backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+        borderColor: '#CCC',
+        borderWidth: 1,
+        shadow: false
+    },
+    tooltip: {
+        headerFormat: '<b>{point.x}</b><br/>',
+        pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+    },
+    plotOptions: {
+        column: {
+            stacking: 'normal',
+            dataLabels: {
+                enabled: true,
+                color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+            }
+        }
+    },
+    series: [{
+        name: 'Men',
+        data: [593, 765, 60, 4, 11]
+    }, {
+        name: 'Women',
+        data: [476, 996, 49, 14, 12]
+    }]
+});
+</script>
+
+
+
+</body>
+</html>
